@@ -20,7 +20,7 @@ publish:
 notify:
   webhook:
     urls:
-      - https://aws-master-1.kontena.io/v1/services/upcloud-drone/todo-app
+      - https://aws-master-1.kontena.io/v1/services/upcloud-drone/todo-app/deploy
     header:
       Authorization: Bearer $$KONTENA_TOKEN
     content_type: application/json
