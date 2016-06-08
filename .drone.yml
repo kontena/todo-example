@@ -12,7 +12,7 @@ compose:
 publish:
   docker:
     username: $$DOCKER_HUB_USER
-    password: $$DOCKER_HUB_PASSWORD
+    password: $$DOCKER_HUB_PWD
     email: $$DOCKER_HUB_EMAIL
     repo: kontena/todo-example
     tag: latest
