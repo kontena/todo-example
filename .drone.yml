@@ -3,3 +3,7 @@ build:
   commands:
     - bundle install
     - rspec spec/
+
+compose:
+  mongodb:
+    image: mongo:3.2
