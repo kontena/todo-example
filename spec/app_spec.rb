@@ -4,9 +4,8 @@ require_relative './spec_helper.rb'
 describe "Todo Application" do
   describe '/' do
     it "redirects to /todos" do
-      get '/'
-      follow_redirect!
-      expect(last_request.url).to eq('http://example.org/todos')
+      expect(Todo).to receive(:desc).with(:created_at).once.and_return [Todo.new(content: 'test')]
+      get '/'      
       expect(response).to be_ok
     end
   end
@@ -24,7 +23,7 @@ describe "Todo Application" do
       expect {
         post '/todos', {}, { 'todo' => { 'content' => 'test' } }
         follow_redirect!
-      }.to change{Todo.count}.by(1)      
+      }.to change{Todo.count}.by(1)
       expect(response).to be_ok
     end
   end

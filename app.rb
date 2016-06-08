@@ -3,7 +3,8 @@ require_relative 'boot'
 require_relative './models/todo'
 
   get "/?" do
-    redirect "/todos"
+    @todos = Todo.desc(:created_at)
+    erb :"todo/index"
   end
 
   # Get all of our todos
@@ -16,7 +17,7 @@ require_relative './models/todo'
   post "/todos" do
     todo = Todo.new(params[:todo])
     if todo.save
-      redirect "/todos"
+      redirect "/"
     else
       erb :"todo/new"
     end
@@ -33,12 +34,12 @@ require_relative './models/todo'
       todo.completed_at = nil
     end
     todo.save
-    redirect "/todos"
+    redirect "/"
   end
 
   # Deletes the todo with id in the database
   delete '/todos/delete/:id' do
     todo = Todo.find(params[:id])
     todo.delete
-    redirect '/todos'
+    redirect '/'
   end
