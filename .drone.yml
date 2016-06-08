@@ -1,8 +1,11 @@
 build:
   image: ruby:2.3
   commands:
-    - bundle install
+    - bundle install --path=bundler
     - rspec spec/
+cache:
+  mount:
+    - bundler
 
 compose:
   mongodb:
