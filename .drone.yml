@@ -29,6 +29,6 @@ notify:
     when:
       branch: master
     template: >
-      {}
+      {"force":true}
   gitter:
     webhook: $$GITTER_WEBHOOK
