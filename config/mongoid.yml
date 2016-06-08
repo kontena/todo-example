@@ -1,9 +1,7 @@
 test:
   clients:
     default:
-      database: todo_test
-      hosts:
-        - localhost:27017
+      uri: <%= ENV['MONGODB_URI'] || 'mongodb://localhost:27017/todo_test' %>
 development:
   clients:
     default:
