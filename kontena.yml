@@ -1,0 +1,14 @@
+version: '2'
+services:
+  app:
+    image: kontena/todo-example:latest
+    extends:
+      file: docker-compose.yml
+      service: web    
+    environment:
+      - MONGODB_URI=mongodb://${project}-mongodb.kontena.local/todo_production
+
+  mongodb:
+    image: mongo:3.2
+    command: mongod --smallfiles
+    stateful: true

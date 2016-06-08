@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="/css/base.css">
+		<link rel="stylesheet" href="/css/index.css">
+
+	</head>
+	<body>
+		<section class="todoapp">
+			<header class="header">
+				<h1>todos</h1>
+        <form action="todos" method="post">
+				    <input class="new-todo" name="todo[content]" placeholder="What needs to be done?" autofocus autocomplete="off">
+        </form>
+			</header>
+      <section class="main">
+        <%= yield %>
+      </section>
+    </section>
+    <footer class="info">
+      Inspired by <a href="http://todomvc.com/">TodoMVC</a> - Powered by <a href="http://kontena.io/">Kontena</a>
+		</footer>
+
+		<!-- Scripts here. Don't remove ↓ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>

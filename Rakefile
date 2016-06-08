@@ -1,0 +1,2 @@
+# Rakefile
+require "./app"

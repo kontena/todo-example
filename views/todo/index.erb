@@ -1,0 +1,19 @@
+<ul class="todo-list">
+  <% @todos.each do |todo| %>
+  <li>
+		<div class="view">
+      <form name="doneForm" action="/todos/<%= todo.id %>" method="post">
+        <input type="hidden" name="_method" value="put" />
+        <input class="toggle" type="checkbox" onclick="this.parentElement.submit()" name="todo[done]" value="true" <%= todo.done ? "checked" : "" %>>
+      </form>
+			<label><%= todo.content %></label>
+      <form action="/todos/delete/<%= todo.id %>" method="POST">
+      	<input type="hidden" name="_method" value="delete" />
+        <button class="destroy"></button>
+      </form>
+
+		</div>
+		<input class="edit" value="<%= todo[:content] %>">
+	</li>
+  <% end %>
+</ul>
