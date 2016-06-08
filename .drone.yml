@@ -17,3 +17,12 @@ publish:
     repo: kontena/todo-example
     tag: latest
     file: Dockerfile
+notify:
+  webhook:
+    urls:
+      - https://aws-master-1.kontena.io/v1/services/upcloud-drone/todo-app
+    header:
+      Authorization: Bearer $$KONTENA_TOKEN
+    content_type: application/json
+    template: >
+      {}
