@@ -26,3 +26,5 @@ notify:
     content_type: application/json
     template: >
       {}
+  gitter:
+    webhook: $$GITTER_WEBHOOK
