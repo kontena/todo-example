@@ -6,7 +6,7 @@ require_relative './models/todo'
     redirect "/todos"
   end
 
-  # Get all of our routes
+  # Get all of our todos
   get "/todos" do
     @todos = Todo.desc(:created_at)
     erb :"todo/index"
