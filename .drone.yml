@@ -1,0 +1,5 @@
+build:
+  image: ruby:2.3
+  commands:
+    - bundle install
+    - rspec spec/
