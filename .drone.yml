@@ -17,6 +17,8 @@ publish:
     repo: kontena/todo-example
     tag: latest
     file: Dockerfile
+    when:
+      branch: master
 notify:
   webhook:
     urls:
@@ -24,6 +26,8 @@ notify:
     header:
       Authorization: Bearer $$KONTENA_TOKEN
     content_type: application/json
+    when:
+      branch: master
     template: >
       {}
   gitter:
