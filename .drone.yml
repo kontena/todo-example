@@ -6,7 +6,14 @@ build:
 cache:
   mount:
     - bundler
-
 compose:
   mongodb:
     image: mongo:3.2
+publish:
+  docker:
+    username: $$DOCKER_HUB_USER
+    password: $$DOCKER_HUB_PASSWORD
+    email: $$DOCKER_HUB_EMAIL
+    repo: kontena/todo-example
+    tag: latest
+    file: Dockerfile
